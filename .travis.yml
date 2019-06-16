@@ -1,4 +1,4 @@
 language: node_js
 
 script:
-- curl -T index.html ftp://${FTP_USER}:${FTP_PASSWORD}@${FTP_HOST}/www
+- ls & pwd & curl -T index.html ftp://${FTP_USER}:${FTP_PASSWORD}@${FTP_HOST}/www
