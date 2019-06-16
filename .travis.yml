@@ -1,0 +1,2 @@
+after_success:
+- curl -T index.html sftp://${FTP_USER}:${FTP_PASSWORD}@${FTP_HOST}/www
