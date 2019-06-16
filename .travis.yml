@@ -10,4 +10,4 @@ deploy:
   on:
     branch: master
 
-script: sftp -o CheckHostIP=no ${FTP_USER}:${FTP_PASSWORD}@${FTP_HOST}:/www/index.html index.html
+script: sftp -o StrictHostKeyChecking=no ${FTP_USER}:${FTP_PASSWORD}@${FTP_HOST}:/www/index.html index.html
