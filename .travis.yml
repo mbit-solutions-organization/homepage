@@ -2,6 +2,7 @@ language: node_js
 
 install:
   - echo $FTP_HOST >> $HOME/.ssh/known_hosts
+  - cat $HOME/.ssh/known_hosts
 
 deploy:
   provider: script
@@ -9,4 +10,4 @@ deploy:
   on:
     branch: master
 
-script: sftp --yes ${FTP_USER}:${FTP_PASSWORD}@${FTP_HOST}:/www/index.html index.html
+script: sftp ${FTP_USER}:${FTP_PASSWORD}@${FTP_HOST}:/www/index.html index.html
