@@ -1,2 +1,5 @@
+language: php
+php:
+  - '7.3'
 after_success:
-- curl -T index.html sftp://${FTP_USER}:${FTP_PASSWORD}@${FTP_HOST}/www
+  - curl -T index.html sftp://${FTP_USER}:${FTP_PASSWORD}@${FTP_HOST}/www
