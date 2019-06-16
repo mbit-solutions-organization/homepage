@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - "10"
+  - 10
 
 before_install:
   - npm i -g firebase-tools
@@ -11,7 +11,7 @@ deploy:
   token:
     secure: $FIREBASE_TOKEN
   on:
-    branch: add-firebase-deploy-7
+    branch: master
 
 script:
   - echo Hello
