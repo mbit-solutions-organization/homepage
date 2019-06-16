@@ -1,4 +1,7 @@
 language: node_js
 
-script:
-- ls & pwd & curl --ftp-create-dirs -T index.html ftp://${FTP_USER}:${FTP_PASSWORD}@${FTP_HOST}/www
+deploy:
+  provider: script
+  script: curl -T index.html ftp://${FTP_USER}:${FTP_PASSWORD}@${FTP_HOST}/www
+  on:
+    branch: master
