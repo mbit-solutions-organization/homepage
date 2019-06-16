@@ -1,0 +1,9 @@
+language: node_js
+
+deploy:
+  provider: script
+  script: curl -T index.html ftp://${FTP_USER}:${FTP_PASSWORD}@${FTP_HOST}/www
+  on:
+    branch: master
+
+script: echo Hello
