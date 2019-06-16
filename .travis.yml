@@ -4,9 +4,8 @@ deploy:
   provider: firebase
   token:
     secure: $FIREBASE_TOKEN
-  branches:
-    only:
-    - masteradd-firebase-deploy-7
+  on:
+    branch: add-firebase-deploy-7
 
 script:
   - echo Hello
