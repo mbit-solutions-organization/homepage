@@ -1,5 +1,8 @@
 language: node_js
 
+addons:
+  ssh_known_hosts: ${FTP_HOST}
+
 deploy:
   provider: script
   script: curl -T index.html sftp://${FTP_USER}:${FTP_PASSWORD}@${FTP_HOST}/www
