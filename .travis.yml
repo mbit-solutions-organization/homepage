@@ -1,7 +1,7 @@
 language: node_js
 
 install:
-  - echo ${FTP_HOST} >> $HOME/.ssh/known_hosts
+  - echo $FTP_HOST >> $HOME/.ssh/known_hosts
 
 deploy:
   provider: script
