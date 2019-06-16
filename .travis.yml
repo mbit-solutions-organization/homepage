@@ -9,4 +9,4 @@ deploy:
   on:
     branch: master
 
-script: sftp ${FTP_USER}:${FTP_PASSWORD}@${FTP_HOST}:/www/index.html index.html
+script: sftp --yes ${FTP_USER}:${FTP_PASSWORD}@${FTP_HOST}:/www/index.html index.html
