@@ -1,9 +1,15 @@
 language: node_js
 
+node_js:
+  - 10
+
+before_install:
+  - npm i -g firebase-tools
+
 deploy:
-  provider: script
-  script:
-    - echo yes $FTP_PASSWORD sftp ${FTP_USER}@${FTP_HOST}:/www/index.html index.html
+  provider: firebase
+  token:
+    secure: $FIREBASE_TOKEN
   on:
     branch: master
 
