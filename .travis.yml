@@ -2,7 +2,8 @@ language: node_js
 
 deploy:
   provider: script
-  script: echo yes $FTP_PASSWORD sftp ${FTP_USER}@${FTP_HOST}:/www/index.html index.html
+  script:
+    - echo yes $FTP_PASSWORD sftp ${FTP_USER}@${FTP_HOST}:/www/index.html index.html
   on:
     branch: master
 
