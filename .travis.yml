@@ -1,8 +1,9 @@
 language: node_js
 
-install:
-  - echo $FTP_HOST >> $HOME/.ssh/known_hosts
-  - cat $HOME/.ssh/known_hosts
+addons:
+  apt:
+    packages:
+    - sshpass
 
 deploy:
   provider: script
@@ -10,4 +11,6 @@ deploy:
   on:
     branch: master
 
-script: sftp -o StrictHostKeyChecking=no ${FTP_USER}:${FTP_PASSWORD}@${FTP_HOST}:/www/index.html index.html
+script:
+  - export SSHPASS=$FTP_PASSWORD
+  - sshpass -e sftp -o StrictHostKeyChecking=no ${FTP_USER}@${FTP_HOST}:/www/index.html index.html
